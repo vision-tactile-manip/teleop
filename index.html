@@ -1,0 +1,338 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Vision-based Tactile Manipulation</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Abstract</a></li>
+							<li><a href="#method">Method</a></li>
+							<li><a href="#videos">Manipulation videos</a></li>
+							<li><a href="#pytouch">Pytouch results</a></li>
+							<li><a href="#stl">Stl finger</a></li>
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h2>A Low Cost Teleoperation Framework Using Vision-based Tactile Sensors for Rigid and Soft Object Manipulation </h2>
+							<h3>Michael C. Welle*, Martina Lippi*, Haofei Lu, Jens Lundell, Andrea Gasparri, Danica Kragic</h3>
+							<p>
+								Endowing robots with tactile capabilities opens up new possibilities  for their interaction with the environment, including the ability to handle fragile and/or soft objects.
+	In this work, we equip the robot gripper with low-cost vision-based tactile sensors and propose a manipulation algorithm that adapts both to rigid and soft objects, without requiring any knowledge on their properties. The algorithm relies on a simple touch and slip detection method, which takes into account the variation in the tactile images with respect to reference ones.
+	We validate the approach on seven different objects, with different properties in terms of rigidity and fragility, to perform unplugging and lifting tasks.  Furthermore, we integrate the manipulation algorithm into a comprehensive grasping pipeline, that recommends the optimal grasping pose based on the object cloud, and validate it to detach a grape from a bunch without damaging it.
+	</p>
+							<p>
+							<small>*Contributed equally</small>
+							</p>
+							<a href="files/tactile.pdf" download="files/tactile.pdf" target="_blank">
+							<button style="font-size:24px" >Preprint <i class="fa fa-download" target="_blank"></i></button>
+							</a>
+							<p> </p>
+
+
+
+
+						</div>
+					</section>
+
+
+					<!-- Method -->
+					<section id="method" class="wrapper style2 fade-up">
+						<div class="inner">
+							<h2>Method</h2>
+							<p>Our Method in action:</p>
+
+							<!--div class="row">
+								<a  class="image "><img class = "full-image" src="images/overview.png" alt="" data-position="center center" /></a>
+							</div-->
+
+							<div class="row">
+								<!--article class="col-4 col-12-xsmall work-item"-->
+									<video controls="" class="overview-video">
+									  <source src="videos/fgcasesummary10mb.mp4" type="video/mp4">
+									</video>
+								<!--/article-->
+							</div>
+
+							<p> </p>
+
+						</div>
+					</section>
+
+				<!-- Cite -->
+					<!--section id="cite" class="wrapper style4 fade-up">
+
+						<div class="inner">
+							<h2>Use the following to cite us:</h2>
+							<p class="p-code"><code>@inproceedings{lippi2020latent,<br>
+  title={Latent Space Roadmap for Visual Action Planning of Deformable and Rigid Object Manipulation},<br>
+  author={Lippi, Martina and Poklukar, Petra and Welle, Michael C and Varava, Anastasiia and Yin, Hang and Marino, Alessandro and Kragic, Danica},<br>
+    booktitle={IEEE/RSJ International Conference on Intelligent Robots and Systems},<br>
+  year={2020}<br>
+}
+</code></p>
+
+							<p> </p>
+
+
+						</div>
+
+
+					</section-->
+
+
+				<!-- Videos -->
+					<section id="videos" class="wrapper style3 spotlights">
+						<div class="inner">
+							<h2>Manipulation videos</h2>
+
+
+							<h3>Overall pipeline</h3>
+
+							<div class="row">
+
+								<article class="col-4 col-12-xsmall work-item">
+
+									<a  class="image"><img src="images/pipeline.png" alt="" data-position="center center" style="height:200px;"/></a>
+								</article>
+
+							</div>
+
+							<p> <a class="button mybutton"  href="pipeline-video.html" target="_blank" > Execution videos</a> </p>
+							<p></p>
+
+
+							<h3>Rough connector</h3>
+
+							<div class="row">
+
+								<article class="col-4 col-12-xsmall work-item">
+									<h4>Object</h4>
+									<a  class="image"><img src="images/conn1.png" alt="" data-position="center center" style="height:200px;"/></a>
+								</article>
+								<article class="col-4 col-12-xsmall work-item">
+									<h4>Tactile data</h4>
+									<a  class="image"><img src="images/conn1_t.png" alt="" data-position="center center" style="height:200px;"/></a>
+								</article>
+							</div>
+
+							<p> <a class="button mybutton"  href="rough-connector-video.html" target="_blank" > Execution videos</a> </p>
+							<p></p>
+
+
+							<h3>Smooth connector</h3>
+
+							<div class="row">
+
+								<article class="col-4 col-12-xsmall work-item">
+									<h4>Object</h4>
+									<a  class="image"><img src="images/conn2.png" alt="" data-position="center center" style="height:200px;"/></a>
+								</article>
+								<article class="col-4 col-12-xsmall work-item">
+									<h4>Tactile data</h4>
+									<a  class="image"><img src="images/conn2_t.png" alt="" data-position="center center" style="height:200px;"/></a>
+								</article>
+							</div>
+
+							<p> <a class="button mybutton"  href="smooth-connector-video.html" target="_blank" > Execution videos</a> </p>
+							<p></p>
+
+
+							<h3>Raw egg</h3>
+
+							<div class="row">
+
+								<article class="col-4 col-12-xsmall work-item">
+									<h4>Object</h4>
+									<a  class="image"><img src="images/egg.png" alt="" data-position="center center" style="height:200px;"/></a>
+								</article>
+								<article class="col-4 col-12-xsmall work-item">
+									<h4>Tactile data</h4>
+									<a  class="image"><img src="images/egg_t.png" alt="" data-position="center center" style="height:200px;"/></a>
+								</article>
+							</div>
+
+							<p> <a class="button mybutton"  href="egg-video.html" target="_blank"> Execution videos</a> </p>
+							<p></p>
+
+							<h3>Plastic glass</h3>
+
+							<div class="row">
+
+								<article class="col-4 col-12-xsmall work-item">
+									<h4>Object</h4>
+									<a  class="image"><img src="images/glass.png" alt="" data-position="center center" style="height:200px;"/></a>
+								</article>
+								<article class="col-4 col-12-xsmall work-item">
+									<h4>Tactile data</h4>
+									<a  class="image"><img src="images/glass_t.png" alt="" data-position="center center" style="height:200px;"/></a>
+								</article>
+							</div>
+
+							<p> <a class="button mybutton"  href="glass-video.html" target="_blank"> Execution videos</a> </p>
+							<p></p>
+
+							<h3>Tomato</h3>
+
+							<div class="row">
+
+								<article class="col-4 col-12-xsmall work-item">
+									<h4>Object</h4>
+									<a  class="image"><img src="images/tomato.png" alt="" data-position="center center" style="height:200px;"/></a>
+								</article>
+								<article class="col-4 col-12-xsmall work-item">
+									<h4>Tactile data</h4>
+									<a  class="image"><img src="images/tomato_t.png" alt="" data-position="center center" style="height:200px;"/></a>
+								</article>
+							</div>
+
+							<p> <a class="button mybutton"  href="tomato-video.html" target="_blank"> Execution videos</a> </p>
+							<p></p>
+
+
+							<h3>White table-grape</h3>
+
+							<div class="row">
+
+								<article class="col-4 col-12-xsmall work-item">
+									<h4>Object</h4>
+									<a  class="image"><img src="images/greengrape.png" alt="" data-position="center center" style="height:200px;"/></a>
+								</article>
+								<article class="col-4 col-12-xsmall work-item">
+									<h4>Tactile data</h4>
+									<a  class="image"><img src="images/greengrape_t.png" alt="" data-position="center center" style="height:200px;"/></a>
+								</article>
+							</div>
+
+							<p> <a class="button mybutton"  href="white-grape-video.html" target="_blank"> Execution videos</a> </p>
+							<p></p>
+
+
+							<h3>Black table-grape</h3>
+
+							<div class="row">
+
+								<article class="col-4 col-12-xsmall work-item">
+									<h4>Object</h4>
+									<a  class="image"><img src="images/redgrape.png" alt="" data-position="center center" style="height:200px;"/></a>
+								</article>
+								<article class="col-4 col-12-xsmall work-item">
+									<h4>Tactile data</h4>
+									<a  class="image"><img src="images/redgrape_t.png" alt="" data-position="center center" style="height:200px;"/></a>
+								</article>
+							</div>
+
+							<p> <a class="button mybutton"  href="black-grape-video.html" target="_blank"> Execution videos</a> </p>
+							<p></p>
+
+
+
+
+							</section>
+
+
+							<section id="pytouch" class="wrapper style4 fade-up">
+
+								<div class="inner">
+									<h2>Pytouch results</h2>
+									<p>Touch results using Pytouch library <a href="https://github.com/facebookresearch/PyTouch" target="_blank">https://github.com/facebookresearch/PyTouch</a></p>
+								</p>
+								<div class="row">
+									<!--article class="col-4 col-12-xsmall work-item"-->
+										<video controls="" class="overview-video">
+										  <source src="videos/pytouch_comb.m4v" type="video/mp4">
+										</video>
+									<!--/article-->
+								</div>
+
+									<p> </p>
+
+
+								</div>
+
+
+							</section>
+
+							<section id="stl" class="wrapper style2 fade-up">
+
+								<div class="inner">
+									<h2>Stl finger model</h2>
+									<p>Stl files for mounting DIGIT sensors on Franka Emika Panda gripper
+										</p>
+										<a href="files/finger.stl" download="files/finger.stl" target="_blank">
+										<button style="font-size:18px" >Download <i class="fa fa-download"></i></button>
+										</a>
+
+									<p> </p>
+
+
+								</div>
+
+
+							</section>
+					<!-- five -->
+					<section id="contact" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>Contact</h2>
+
+
+										<li>Michael C. Welle; mwelle(at)kth.se; KTH Royal Institute of Technology, Sweden</li>
+										<li>Martina Lippi;  martina.lippi(at)uniroma3.it; Roma Tre University, Italy</li>
+										<li>Haofei Lu; haofeil(at)kth.se; KTH Royal Institute of Technology, Sweden</li>
+										<li>Jens Lundell; jelundel(at)kth.se; KTH Royal Institute of Technology, Sweden</li>
+										<li>Andrea Gasparri; andrea.gasparri(at)uniroma3.it; Roma Tre University, Italy</li>
+										<li>Danica Kragic; dani(at)kth.se; KTH Royal Institute of Technology, Sweden</li>
+
+									</ul>
+
+						</div>
+					</section>
+
+
+
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+				<ul class="copyright">
+						<li>&copy; All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
