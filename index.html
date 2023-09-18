@@ -22,9 +22,9 @@
 						<ul>
 							<li><a href="#intro">Abstract</a></li>
 							<li><a href="#method">Method</a></li>
-							<li><a href="#videos">Manipulation videos</a></li>
-							<li><a href="#pytouch">Pytouch results</a></li>
-							<li><a href="#stl">Stl finger</a></li>
+							<li><a href="#videos">Execution videos</a></li>
+							<li><a href="#instructions">Instructions</a></li>
+							<li><a href="#code">Code</a></li>
 							<li><a href="#contact">Contact</a></li>
 						</ul>
 					</nav>
@@ -37,12 +37,14 @@
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<h2>A Low Cost Teleoperation Framework Using Vision-based Tactile Sensors for Rigid and Soft Object Manipulation </h2>
-							<h3>Michael C. Welle*, Martina Lippi*, Haofei Lu, Jens Lundell, Andrea Gasparri, Danica Kragic</h3>
+							<h2>							<h2>A Low Cost Teleoperation Framework Using Vision-based Tactile Sensors for Rigid and Soft Object Manipulation </h2>
+ </h2>
+							<h3> Martina Lippi*, Michael C. Welle*,Maciej K. Wozniak, Andrea Gasparri, Danica Kragic</h3>
 							<p>
-								Endowing robots with tactile capabilities opens up new possibilities  for their interaction with the environment, including the ability to handle fragile and/or soft objects.
-	In this work, we equip the robot gripper with low-cost vision-based tactile sensors and propose a manipulation algorithm that adapts both to rigid and soft objects, without requiring any knowledge on their properties. The algorithm relies on a simple touch and slip detection method, which takes into account the variation in the tactile images with respect to reference ones.
-	We validate the approach on seven different objects, with different properties in terms of rigidity and fragility, to perform unplugging and lifting tasks.  Furthermore, we integrate the manipulation algorithm into a comprehensive grasping pipeline, that recommends the optimal grasping pose based on the object cloud, and validate it to detach a grape from a bunch without damaging it.
+								Haptic feedback is essential for humans to successfully perform complex and delicate manipulation tasks. A recent rise in tactile sensors has enabled robots to leverage the sense of touch and expand their capability drastically. However, many tasks still need human intervention/guidance. For this reason,
+we present a  teleoperation framework designed to provide haptic feedback to human operators based on the data from camera-based tactile sensors mounted on the robot gripper. Partial autonomy is introduced to prevent slippage of grasped objects during task execution.
+Notably, we rely exclusively on low-cost off-the-shelf hardware to realize an affordable solution.
+We demonstrate the versatility of the framework on nine different objects ranging from rigid to soft and fragile ones, using three different operators on real hardware.
 	</p>
 							<p>
 							<small>*Contributed equally</small>
@@ -72,7 +74,7 @@
 							<div class="row">
 								<!--article class="col-4 col-12-xsmall work-item"-->
 									<video controls="" class="overview-video">
-									  <source src="videos/fgcasesummary10mb.mp4" type="video/mp4">
+									  <source src="videos/summary.mp4" type="video/mp4">
 									</video>
 								<!--/article-->
 							</div>
@@ -107,93 +109,155 @@
 				<!-- Videos -->
 					<section id="videos" class="wrapper style3 spotlights">
 						<div class="inner">
-							<h2>Manipulation videos</h2>
+							<h2>Execution videos</h2>
+
+<!-- lime, plum, grape, and tomato, as well as more rigid items, that are AUX connector, Tetra Pak box,  plastic gel bottle, plastic cup -->
 
 
-							<h3>Overall pipeline</h3>
-
-							<div class="row">
-
-								<article class="col-4 col-12-xsmall work-item">
-
-									<a  class="image"><img src="images/pipeline.png" alt="" data-position="center center" style="height:200px;"/></a>
-								</article>
-
-							</div>
-
-							<p> <a class="button mybutton"  href="pipeline-video.html" target="_blank" > Execution videos</a> </p>
-							<p></p>
-
-
-							<h3>Rough connector</h3>
+							<h3> Plastic gel bottle</h3>
 
 							<div class="row">
 
 								<article class="col-4 col-12-xsmall work-item">
 									<h4>Object</h4>
-									<a  class="image"><img src="images/conn1.png" alt="" data-position="center center" style="height:200px;"/></a>
+									<a  class="image"><img src="images/gel.png" alt="" data-position="center center" style="height:200px;"/></a>
 								</article>
 								<article class="col-4 col-12-xsmall work-item">
 									<h4>Tactile data</h4>
-									<a  class="image"><img src="images/conn1_t.png" alt="" data-position="center center" style="height:200px;"/></a>
+									<a  class="image"><img src="images/gel_s.png" alt="" data-position="center center" style="height:200px;"/></a>
 								</article>
 							</div>
 
-							<p> <a class="button mybutton"  href="rough-connector-video.html" target="_blank" > Execution videos</a> </p>
+							<p> <a class="button mybutton"  href="bottle-video.html" target="_blank" > Execution videos</a> </p>
 							<p></p>
 
 
-							<h3>Smooth connector</h3>
+							<h3>Plastic cup</h3>
 
 							<div class="row">
 
 								<article class="col-4 col-12-xsmall work-item">
 									<h4>Object</h4>
-									<a  class="image"><img src="images/conn2.png" alt="" data-position="center center" style="height:200px;"/></a>
+									<a  class="image"><img src="images/plastic_cup.png" alt="" data-position="center center" style="height:200px;"/></a>
 								</article>
 								<article class="col-4 col-12-xsmall work-item">
 									<h4>Tactile data</h4>
-									<a  class="image"><img src="images/conn2_t.png" alt="" data-position="center center" style="height:200px;"/></a>
+									<a  class="image"><img src="images/plastic_cup_s.png" alt="" data-position="center center" style="height:200px;"/></a>
 								</article>
 							</div>
 
-							<p> <a class="button mybutton"  href="smooth-connector-video.html" target="_blank" > Execution videos</a> </p>
+							<p> <a class="button mybutton"  href="cup-video.html" target="_blank" > Execution videos</a> </p>
 							<p></p>
 
 
-							<h3>Raw egg</h3>
+							<h3>AUX connector</h3>
 
 							<div class="row">
 
 								<article class="col-4 col-12-xsmall work-item">
 									<h4>Object</h4>
-									<a  class="image"><img src="images/egg.png" alt="" data-position="center center" style="height:200px;"/></a>
+									<a  class="image"><img src="images/aux.png" alt="" data-position="center center" style="height:200px;"/></a>
 								</article>
 								<article class="col-4 col-12-xsmall work-item">
 									<h4>Tactile data</h4>
-									<a  class="image"><img src="images/egg_t.png" alt="" data-position="center center" style="height:200px;"/></a>
+									<a  class="image"><img src="images/aux_s.png" alt="" data-position="center center" style="height:200px;"/></a>
 								</article>
 							</div>
 
-							<p> <a class="button mybutton"  href="egg-video.html" target="_blank"> Execution videos</a> </p>
+							<p> <a class="button mybutton"  href="aux-video.html" target="_blank"> Execution videos</a> </p>
 							<p></p>
 
-							<h3>Plastic glass</h3>
+							<h3>Tetra Pak box</h3>
 
 							<div class="row">
 
 								<article class="col-4 col-12-xsmall work-item">
 									<h4>Object</h4>
-									<a  class="image"><img src="images/glass.png" alt="" data-position="center center" style="height:200px;"/></a>
+									<a  class="image"><img src="images/smoothy.png" alt="" data-position="center center" style="height:200px;"/></a>
 								</article>
 								<article class="col-4 col-12-xsmall work-item">
 									<h4>Tactile data</h4>
-									<a  class="image"><img src="images/glass_t.png" alt="" data-position="center center" style="height:200px;"/></a>
+									<a  class="image"><img src="images/smoothy_s.png" alt="" data-position="center center" style="height:200px;"/></a>
 								</article>
 							</div>
 
-							<p> <a class="button mybutton"  href="glass-video.html" target="_blank"> Execution videos</a> </p>
+							<p> <a class="button mybutton"  href="box-video.html" target="_blank"> Execution videos</a> </p>
 							<p></p>
+
+
+								<h3>Pistachio nut</h3>
+
+								<div class="row">
+
+									<article class="col-4 col-12-xsmall work-item">
+										<h4>Object</h4>
+										<a  class="image"><img src="images/nut.png" alt="" data-position="center center" style="height:200px;"/></a>
+									</article>
+									<article class="col-4 col-12-xsmall work-item">
+										<h4>Tactile data</h4>
+										<a  class="image"><img src="images/nut_s.png" alt="" data-position="center center" style="height:200px;"/></a>
+									</article>
+								</div>
+
+								<p> <a class="button mybutton"  href="nut-video.html" target="_blank"> Execution videos</a> </p>
+								<p></p>
+
+
+								<h3>Lime</h3>
+
+								<div class="row">
+
+									<article class="col-4 col-12-xsmall work-item">
+										<h4>Object</h4>
+										<a  class="image"><img src="images/lime.png" alt="" data-position="center center" style="height:200px;"/></a>
+									</article>
+									<article class="col-4 col-12-xsmall work-item">
+										<h4>Tactile data</h4>
+										<a  class="image"><img src="images/lime_s.png" alt="" data-position="center center" style="height:200px;"/></a>
+									</article>
+								</div>
+
+								<p> <a class="button mybutton"  href="lime-video.html" target="_blank"> Execution videos</a> </p>
+								<p></p>
+
+
+
+								<h3>Plum</h3>
+
+								<div class="row">
+
+									<article class="col-4 col-12-xsmall work-item">
+										<h4>Object</h4>
+										<a  class="image"><img src="images/plum.png" alt="" data-position="center center" style="height:200px;"/></a>
+									</article>
+									<article class="col-4 col-12-xsmall work-item">
+										<h4>Tactile data</h4>
+										<a  class="image"><img src="images/plum_s.png" alt="" data-position="center center" style="height:200px;"/></a>
+									</article>
+								</div>
+
+								<p> <a class="button mybutton"  href="plum-video.html" target="_blank"> Execution videos</a> </p>
+								<p></p>
+
+
+
+									<h3>Table-grape berry</h3>
+
+									<div class="row">
+
+										<article class="col-4 col-12-xsmall work-item">
+											<h4>Object</h4>
+											<a  class="image"><img src="images/grape.png" alt="" data-position="center center" style="height:200px;"/></a>
+										</article>
+										<article class="col-4 col-12-xsmall work-item">
+											<h4>Tactile data</h4>
+											<a  class="image"><img src="images/grape_s.png" alt="" data-position="center center" style="height:200px;"/></a>
+										</article>
+									</div>
+
+									<p> <a class="button mybutton"  href="grape-video.html" target="_blank"> Execution videos</a> </p>
+									<p></p>
+
 
 							<h3>Tomato</h3>
 
@@ -205,47 +269,11 @@
 								</article>
 								<article class="col-4 col-12-xsmall work-item">
 									<h4>Tactile data</h4>
-									<a  class="image"><img src="images/tomato_t.png" alt="" data-position="center center" style="height:200px;"/></a>
+									<a  class="image"><img src="images/tomato_s.png" alt="" data-position="center center" style="height:200px;"/></a>
 								</article>
 							</div>
 
 							<p> <a class="button mybutton"  href="tomato-video.html" target="_blank"> Execution videos</a> </p>
-							<p></p>
-
-
-							<h3>White table-grape</h3>
-
-							<div class="row">
-
-								<article class="col-4 col-12-xsmall work-item">
-									<h4>Object</h4>
-									<a  class="image"><img src="images/greengrape.png" alt="" data-position="center center" style="height:200px;"/></a>
-								</article>
-								<article class="col-4 col-12-xsmall work-item">
-									<h4>Tactile data</h4>
-									<a  class="image"><img src="images/greengrape_t.png" alt="" data-position="center center" style="height:200px;"/></a>
-								</article>
-							</div>
-
-							<p> <a class="button mybutton"  href="white-grape-video.html" target="_blank"> Execution videos</a> </p>
-							<p></p>
-
-
-							<h3>Black table-grape</h3>
-
-							<div class="row">
-
-								<article class="col-4 col-12-xsmall work-item">
-									<h4>Object</h4>
-									<a  class="image"><img src="images/redgrape.png" alt="" data-position="center center" style="height:200px;"/></a>
-								</article>
-								<article class="col-4 col-12-xsmall work-item">
-									<h4>Tactile data</h4>
-									<a  class="image"><img src="images/redgrape_t.png" alt="" data-position="center center" style="height:200px;"/></a>
-								</article>
-							</div>
-
-							<p> <a class="button mybutton"  href="black-grape-video.html" target="_blank"> Execution videos</a> </p>
 							<p></p>
 
 
@@ -254,19 +282,16 @@
 							</section>
 
 
-							<section id="pytouch" class="wrapper style4 fade-up">
+
+							<section id="instructions" class="wrapper style2 fade-up">
 
 								<div class="inner">
-									<h2>Pytouch results</h2>
-									<p>Touch results using Pytouch library <a href="https://github.com/facebookresearch/PyTouch" target="_blank">https://github.com/facebookresearch/PyTouch</a></p>
-								</p>
-								<div class="row">
-									<!--article class="col-4 col-12-xsmall work-item"-->
-										<video controls="" class="overview-video">
-										  <source src="videos/pytouch_comb.m4v" type="video/mp4">
-										</video>
-									<!--/article-->
-								</div>
+									<h2>Instructions for setup</h2>
+									<p>Instructions for setting up the teleoperation framework using DIGIT tactile sensors and Oculus Quest 2 controller
+										</p>
+										<a href="files/instructions.pdf" download="files/finger.stl" target="_blank">
+										<button style="font-size:18px" >Download <i class="fa fa-download"></i></button>
+										</a>
 
 									<p> </p>
 
@@ -276,14 +301,14 @@
 
 							</section>
 
-							<section id="stl" class="wrapper style2 fade-up">
+							<section id="code" class="wrapper style4 fade-up">
 
 								<div class="inner">
-									<h2>Stl finger model</h2>
-									<p>Stl files for mounting DIGIT sensors on Franka Emika Panda gripper
+									<h2>Code</h2>
+									<p>Code available at the following repository: 	<a href="https://vision-tactile-manip.github.io/teleop-code/" target="_blank">https://vision-tactile-manip.github.io/teleop/</a>
 										</p>
-										<a href="files/finger.stl" download="files/finger.stl" target="_blank">
-										<button style="font-size:18px" >Download <i class="fa fa-download"></i></button>
+										<a href="https://vision-tactile-manip.github.io/teleop-code/" target="_blank">
+										<button style="font-size:18px" >Check it out! <i class="fa fa-github"></i></button>
 										</a>
 
 									<p> </p>
@@ -297,12 +322,9 @@
 					<section id="contact" class="wrapper style1 fade-up">
 						<div class="inner">
 							<h2>Contact</h2>
-
-
+							<li>Martina Lippi;  martina.lippi(at)uniroma3.it; Roma Tre University, Italy</li>
 										<li>Michael C. Welle; mwelle(at)kth.se; KTH Royal Institute of Technology, Sweden</li>
-										<li>Martina Lippi;  martina.lippi(at)uniroma3.it; Roma Tre University, Italy</li>
-										<li>Haofei Lu; haofeil(at)kth.se; KTH Royal Institute of Technology, Sweden</li>
-										<li>Jens Lundell; jelundel(at)kth.se; KTH Royal Institute of Technology, Sweden</li>
+										<li>Maciej K. Wozniak; maciejw(at)kth.se; KTH Royal Institute of Technology, Sweden</li>
 										<li>Andrea Gasparri; andrea.gasparri(at)uniroma3.it; Roma Tre University, Italy</li>
 										<li>Danica Kragic; dani(at)kth.se; KTH Royal Institute of Technology, Sweden</li>
 
