@@ -342,6 +342,32 @@
 
 								<h2 id="haptic-feedback">Haptic Feedback via Tactile sensors</h2>
 
+								<ol>
+									<li>Get the  <a href="./files/haptic_feedback.cs" download="haptic_feedback.cs">haptic feedback</a>   unity scripts. </li>
+									<li>Copy it into the assets folder 
+									or, Make a new c# script in unity -&gt; right click in assets create-&gt;c# script</li>
+									<li>Draw the haptic feedcack script onto the plane </li>
+
+									<li> Rebulid the unity app on the Oculus</li>
+
+									<li> Cancel the ROS cube move</li>
+
+									<li> Connect the DIGIT sensors to your ROS PC</li>
+
+
+									<li> Lunch digit_cams.launch (you might need to adjust the "video_device" parameter)</li>
+									<pre><code>roslaunch quest2_ros_msg digit_cams.launch </code> </pre>
+
+									<li> start the haptic_feedback_via_tactile script in the ROS terminal (make sure the ROS_IP and ROS_MASTER_URI are correctly set + the ros tcp endpoint is running) </li>
+									<pre><code>rosrun quest2_ros_msg haptic_feedback_via_tactile </code> </pre>
+
+									<li> Pressing the "B" button should start the reference frames collection (default 100 frames)</li>
+
+									<li> Now use the touch sensors and recive the haptic feedback via the vibration of the controller</li>
+
+								</ol>
+
+
 
 
 
