@@ -1,0 +1,376 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Vision-based Tactile Manipulation</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#set-up-oculus-headset">Set up Oculus headse</a></li>
+							<li><a href="#set-up-unity-on-ubuntu">Set up Unity on Ubuntu</a></li>
+							<li><a href="#setting-up-occulus-in-unity">Setting up Occulus in Unity</a></li>
+							<li><a href="#ros-to-unity-connection">ROS to Unity connection</a></li>
+							<li><a href="#moving-a-cube-in-vr-over-ros-example">Moving a cube in VR over ros example</a></li>
+							<li><a href="#haptic-feedback">Haptic Feedback via Tactile sensors</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<h1 id="teleop-setup-instructions">Setup Instructions</h1>
+				<!-- Intro -->
+					<section id="set-up-oculus-headset" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							
+							<h2 id="set-up-oculus-headset">Set up Oculus headset</h2>
+								<p>To be able to deploy apps from Unity, we need to set the headset into developer mode. This can only be done via the phone app.</p>
+								<ol>
+								<li>Download the Oculus app on your phone.</li>
+								<li>The Meta account signed in as admin on the Oculus and the Meta account used in the app needs to be the same.
+								 If you are not signed in as admin on the oculus headset, you need to reset the device by:<ol>
+								<li>Power off the device</li>
+								<li>Power on while holding volume (-)</li>
+								<li>Choose factory reset</li>
+								</ol>
+								</li>
+								<li>Connect to your Oculus from your phone by choosing “pair your headset” in the app.</li>
+								<li>Join or create a Meta dev organization to get developer rights for you Meta account.</li>
+
+								<li>Select your meta quest device in the app -&gt; Headset settings -&gt; Developer Mode -&gt; on </li>
+
+								<img src="imgs/image-1.png" alt="Oculus developer mode" width="1000" > 
+								<li>Restart headset</li>
+								<li>In the headset -&gt; go to settings -&gt; system -&gt; developer -&gt; USB connection dialog </li>
+								<img src="imgs/image-2.png" alt="USB connectiont"  width="700">
+								<li>Now connect USB-c cable to headset and pc</li>
+								<li>You will see the following dialog pop up-&gt; press allow </li>
+								<img src="imgs/image-8.png" alt="USB allow" width="700">
+								</ol>
+
+
+
+						</div>
+					</section>
+
+
+					<!-- Method -->
+					<section id="set-up-unity-on-ubuntu" class="wrapper style2 fade-up">
+						<div class="inner">
+							
+
+							<h2 id="set-up-unity-on-ubuntu-">Set up Unity on Ubuntu:</h2>
+							<ol>
+							<li>Install Unity Hub 3.0.0
+							When following the instructions, make sure to install 3.0.0 i.e:
+							sudo apt-get install unityhub=3.0.0
+							<a href="https://docs.unity3d.com/hub/manual/InstallHub.html#install-hub-linux">https://docs.unity3d.com/hub/manual/InstallHub.html#install-hub-linux</a></li>
+							<li>In Unity hub install editor 2020.3.48f1 </li>
+							<img src="imgs/image-3.png" alt="Unity" width="1200">
+							<li>Select Android build support (Oculus quest 2 is an android device)</li>
+							<img src="imgs/image-7.png" alt="unity-2" width="1200">
+							</ol>
+
+						</div>
+					</section>
+
+
+
+				<!-- setting-up-occulus-in-unity -->
+					<section id="setting-up-occulus-in-unity" class="wrapper style3 spotlights">
+						<div class="inner">							
+
+								<h2 id="setting-up-occulus-in-unity">Setting up Occulus in Unity</h2>
+								<ol>
+								<li>Make a new 3D Core template project in Unity </li>
+								<img src="imgs/image-6.png" alt="unity-new" width="1200">
+								<li>Add a plane and cube to the scene</li>
+								<li>Import Oculus integration package<ol>
+								<li>Add to your assets in unity package web page (must be logged in to you acc)
+								<a href="https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022">https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022</a></li>
+								<li>Open package manager in the unity editor (window -&gt; package manager)</li>
+								<li>Choose “My Assets” in the drop down menu</li>
+								<img src="imgs/image-9.png" alt="assets" width="700">
+								<li>Select Oculus Integration and hit Download</li>
+								<li>Click Import
+								<img src="imgs/image-10.png" alt="Unity-import" width="1200">
+								If prompted to cleanup:<ol>
+								<li>Select show assets</li>
+								<img src="imgs/image-11.png" alt="unity-dialoge-1" width="700">
+								<li>Then select Upgrade </li>
+								<img src="imgs/image-12.png" alt="unity-dialoge-2" width="700">
+								<li>restart (save)</li>
+								<img src="imgs/image-13.png" alt="unity-dialoge-3" width="700">
+
+								<li>Sometimes it will find more to clean -&gt; repeat until it starts without issues. </li>
+								<li>If prompted to clean up -&gt; do it. </li>
+								<img src="imgs/image-14.png" alt="unity-dialoge-3" width="700">
+								</ol>
+								</li>
+								</ol>
+								</li>
+								<li>Fix issues found be Unity<ol>
+								<li>Press oculus symbol in the bottom right if a red dot is present: </li>
+								<img src="imgs/image-15.png" alt="Oculus fixes" width="700">
+								<li>Press “fix all” </li>
+								<img src="imgs/image-18.png" alt="Alt text" width="1200">
+								<li>Press fix all again.</li>
+								<li>Press apply all for recommended actions</li> 
+								<img src="imgs/image-17.png" alt="Oculus fixes again" width="1200">
+								<li>The red/orange dot should disappear from the symbol bottom right</li>
+								</ol>
+								</li>
+								<li>Drag OVRPlayerController.prefab into the scene</li>
+								<img src="imgs/image-19.png" alt="Unity prefab" width="1200">
+								<li>Connect your Oculus to the PC (confirm usb dialog in the headset) </li>
+								<img src="imgs/image-20.png" alt="Unity build" width="1200">
+								<li>Set up build options<ol>
+								<li>Go to file -&gt; build settings and switch to Android</li>
+								<li>Switch platform
+								This takes a while …</li>
+								<li>Press on the red dot again and Fix all /apply all again
+								Wait a while ….</li>
+								<li>Select Run Device -&gt; Oculus quest 2. If the Oculus doesn’t show up under Run Device, make sure sure you have confirmed USB debugging in the headset when connecting the USB cable. If USB debug prompt does not show up try:<ol>
+								<li>Disable developer mode from phone</li>
+								<li>Restart Oculus</li>
+								<li>Enable developer mode from phone</li>
+								<li>Restart Oculus.</li>
+								<li>Connect USB cable.</li>
+								<li>Click allow USB access in the headset.</li>
+								<li>Confirm USB debugging in the headset.</li>
+								</ol>
+								</li>
+								</ol>
+								</li>
+								<li><p>Press build and run (save apk file)</p>
+								<p>You might get some build errors :</p>
+								<ul>
+								<li><p>Check the oculus symbol in the bottom right and press fix until it diapers if errors consist:</p>
+								</li>
+								<li><p>If the error is related to the JDK, Android SDK &amp; NDK (Unity installs some but for some Unity distros (like 18) it’s not working and has to be adjusted), we need to install the right version of these. You can set the JDK, SDK, NDK under “edit -&gt; preferences -&gt; External tools.</p>
+								<img src="imgs/image-21.png" alt="Unity-preferences" width="1200">
+								</li>
+								</ul>
+								<p>To install Android JDK, SDK, &amp; NDK (Ubuntu 18.04):</p>
+								<p>Install <strong>JDK</strong></p>
+								<ol>
+								<li>install jdk
+								sudo apt install openjdk-8-jdk</li>
+								<li>Check you have correct version
+								java -version</li>
+								<li>Select it in unity. </li>
+								</ol>
+								<img src="imgs/image-23.png" alt="JDK" width="1200">
+								<p>Install <strong>SDK</strong></p>
+								<ol>
+								<li>Download android sdk:
+								wget <a href="https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip">https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip</a>
+								Unzip:
+								unzip sdk-tools-linux-4333796.zip -d androidSDK/</li>
+								<li>Now we have to add it to the bashrc to be able to install some additional packages
+								sudo nano ~/.bashrc
+								Add this line to the file (replace username with your username (no “[]”)):
+								export PATH=/home/[username]/androidSDK/tools/:/home/[username]/androidSDK/tools/bin:$PATH</li>
+								<li>In a new terminal (or sources ./bashrc) go for:
+								sdkmanager --list
+								There should be bunch of stuff if not check the path again and make sure to have sourced or new terminal</li>
+								<li>Now install 2 packages
+								sdkmanager &quot;build-tools;32.0.3&quot;
+								Accept the licence with y
+								Install second one:
+								sdkmanager &quot;platform-tools&quot;</li>
+								<li>Select the androidSDK folder in unity: (mcw will be your username)</li>
+								<img src="imgs/image-24.png" alt="SDKt" width="1200">
+
+								</ol>
+								<p>Install <strong>NDK</strong>  </p>
+								<ol>
+								<li>Download the NDK r19c from here:
+								<a href="https://github.com/android/ndk/wiki/Unsupported-Downloads#r19c">https://github.com/android/ndk/wiki/Unsupported-Downloads#r19c</a>
+								Direct link:
+								<a href="https://dl.google.com/android/repository/android-ndk-r19c-linux-x86_64.zip">https://dl.google.com/android/repository/android-ndk-r19c-linux-x86_64.zip</a>
+								From terminal:
+								wget <a href="https://dl.google.com/android/repository/android-ndk-r19c-linux-x86_64.zip">https://dl.google.com/android/repository/android-ndk-r19c-linux-x86_64.zip</a></li>
+								<li>Unzip:
+								unzip android-ndk-r19c-linux-x86_64 -d androidNDK/</li>
+								<li>When selecting the folder in unity (android-ndk-r19c) you will see this error:
+								<img src="imgs/image-26.png" alt="NDK" width="700"> <br>
+								Manually change verision<ol>
+								<li>Navigate to the folder and open the file “source.properties”</li>
+								<li>Change Pkg.Revision to 19.0.5232133 </li>
+								<img src="imgs/image-25.png" alt="NDK-2" width="700">
+								</ol>
+								</li>
+								<li>Now selection in unity will work </li>
+								<img src="imgs/image-27.png" alt="NDK-3" width="1200">
+								</ol>
+								</li>
+								</ol>
+								<p>Now you should be able to “Build and Run” your app on the Occulus Quest 2
+								I.e. you will see a white plane and cube and can walk around using the controllers and look around via headset movements</p>
+
+								</div>
+
+
+
+
+							</section>
+
+
+
+							<section id="ros-to-unity-connection" class="wrapper style2 fade-up">
+
+								<div class="inner">
+
+
+
+									<h2 id="ros-to-unity-connection">ROS to Unity connection</h2>
+									<ol>
+									<li>Install ROS by following <a href="http://wiki.ros.org/melodic/Installation/Ubuntu">http://wiki.ros.org/melodic/Installation/Ubuntu</a> (cahnge to your version if needed -&gt; this guide continuous with melodic)</li>
+									<li>Follow these steps to get the robotics tab in unity. Only install the ros tcp connector package! <a href="https://github.com/Unity-Technologies/Unity-Robotics-Hub/blob/main/tutorials/quick_setup.md">https://github.com/Unity-Technologies/Unity-Robotics-Hub/blob/main/tutorials/quick_setup.md</a></li>
+									<li>It will look like this afterward (robotic tab appears) </li>
+									<img src="imgs/image-28.png" alt="ROS in Unity" width="1200">
+									<li>Create a ROS workspace<ol>
+									<li>Create a workspace and src dir </li>
+
+										<pre><code>mkdir -p ~/my_ws/src
+									</code></pre>
+									<li>Init workspace</li>
+										<pre>
+											<code>catkin_init_workspace src
+									</code>
+										</pre>
+									</ol>
+									</li>
+									<li>Download the ros-tcp-endpoint package in your ros src folder:</li>
+										<pre><code>cd ~/my_ws/src</code>
+									<code>git clone https://github.com/Unity-Technologies/ROS-TCP-Endpoint.git
+									</code></pre>
+									<li><p>Clone the quest2_ros_msg package from TODO into your src. For now all files are here: <a href="https://drive.google.com/drive/folders/1VWmBWDII7Pwz979tciZBF-KVvHwq8s5v?usp=sharing">https://drive.google.com/drive/folders/1VWmBWDII7Pwz979tciZBF-KVvHwq8s5v?usp=sharing</a></p>
+									</li>
+									<li><p>Build with catkin build</p>
+									<pre><code>cd ~<span class="hljs-regexp">/my_ws/</span></code>
+									<code>catkin build
+									</code></pre></li>
+									<li>Build ROS messaes in Unity. Go to robotics -&gt; generate ROS Messages and set Ros message path to your quest2_ros_msg location. Press build 3 msgs <br>
+									<img src="imgs/image-29.png" alt="ROS msgs" width="1200">  <br>
+									You can see the unity message code thats been generated in your project: <br>
+									<img src="imgs/image-30.png" alt="ROS msgs-2" width="1200"> <br>
+									If you make a new message type do it in the ques2_ros_msg package and then build it in unity as described above</li>
+									</ol>
+
+
+									
+
+
+
+								</div>
+
+
+							</section>
+
+							<section id="moving-a-cube-in-vr-over-ros-example" class="wrapper style4 fade-up">
+
+								<div class="inner">
+								
+
+									<h2 id="moving-a-cube-in-vr-over-ros-example">Moving a cube in VR over ros example</h2>
+									<p>Now we will make a simple example that shows how to move a cube in vr mimicking your right controller movements when the “A” button is pressed over ROS</p>
+									<ol>
+									<li><p>Add scripts for ROS communication</p>
+									<ol>
+									<li>Get the  <a href="./files/teleop.cs" download="teleop.cs">teleop</a>  and  <a href="./files/cube_move.cs" download="cube_move.cs">cube_move</a> unity scripts. </li>
+										<!-- from <a href="https://drive.google.com/drive/u/0/folders/1VWmBWDII7Pwz979tciZBF-KVvHwq8s5v">https://drive.google.com/drive/u/0/folders/1VWmBWDII7Pwz979tciZBF-KVvHwq8s5v</a> -->
+									<li>Copy it into the assets folder <br>
+									<img src="imgs/image-31.png" alt="unity-asset" width="1200"> <br>
+									or, Make a new c# script in unity -&gt; right click in assets create-&gt;c# script</li>
+									<li>Draw the teleop script and the cube move script onto the plane: </li>
+									<img src="imgs/image-32.png" alt="unity-script" width="700">
+									<li>Name the cube in the scene “test_box”:</li>
+									<img src="imgs/image-33.png" alt="unity-box" width="700">
+									<li>Add ridgitbody to test_box (“Add component” -&gt; “Rigidbody”) and disable gravity</li>
+									</ol>
+									</li>
+									<li><p>Configuring communication between ROS and headset:</p>
+									<ol>
+									<li>Make sure both devices (ROS pc and quest2) are in the same network</li>
+									<li>Set rosIP Master etc:<ul>
+									<li>In ROS terminal do:
+										<pre><code> <span class="hljs-meta">export</span> ROS_MASTER_URI<span class="hljs-symbol">=http</span>://&lt;<span class="hljs-built_in">pc</span> that runs ros <span class="hljs-built_in">ip</span>&gt;:<span class="hljs-number">11311</span></code>
+											<code><span class="hljs-meta">export</span> ROS_IP=&lt;<span class="hljs-built_in">pc</span> that runs ros <span class="hljs-built_in">ip</span>&gt;
+									</code></pre> Now start the ros tcp endpoint via<pre><code> roslaunch ros_tcp_endpoint endpoint.<span class="hljs-built_in">launch</span> tcp_ip:=&lt;pc <span class="hljs-keyword">that</span> runs ros ip&gt; tcp_port:=<span class="hljs-number">10000</span>
+									</code></pre></li>
+									<li>In unity go to robotics-&gt;ROS settings and enter that ip in ros IP address: </li>
+									 <img src="imgs/image-34.png" alt="ROS Unity connection" width="700">
+									</ul>
+									</li>
+									</ol>
+									</li>
+									<li>Build and run the app. You can see if the connection is successful in the ros tcp terminal: </li>
+									<img src="imgs/image-35.png" alt="ROS Unity connection" width="700">
+									<li>Now in a new terminal set make the same ros_master and ros_IP settings and then run:<pre><code><span class="hljs-selector-tag">rosrun</span> <span class="hljs-selector-tag">quest2_ros_msg</span> <span class="hljs-selector-tag">cube_move_ros</span><span class="hljs-selector-class">.py</span>
+									</code></pre>The cube should move when pressing "A" and moving the right controller or pressing "X" and moving the left controller.</li>
+									</ol>
+
+
+								</div>
+
+
+							</section>
+					<!-- five -->
+					<section id="contact" class="wrapper style1 fade-up">
+						<div class="inner">
+							
+
+
+
+								<h2 id="haptic-feedback">Haptic Feedback via Tactile sensors</h2>
+
+
+
+
+
+						</div>
+					</section>
+
+
+
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+				<ul class="copyright">
+						<li>&copy; All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
