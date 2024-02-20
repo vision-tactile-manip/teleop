@@ -100,6 +100,10 @@
 								<ol>
 								<li>Make a new 3D Core template project in Unity </li>
 								<img src="imgs/image-6.png" alt="unity-new" width="1200">
+								<li>Set up build options<ol>
+								<li>Go to file -&gt; build settings and switch to Android -> switch platform</li>
+
+
 								<li>Add a plane and cube to the scene</li>
 								<li>Import Oculus integration package<ol>
 								<li>Add to your assets in unity package web page (must be logged in to you acc)
@@ -108,7 +112,7 @@
 								<li>Choose “My Assets” in the drop down menu</li>
 								<img src="imgs/image-9.png" alt="assets" width="700">
 								<li>Select Oculus Integration and hit Download</li>
-								<li>Click Import
+								<li>Click Import ... and wait a while.
 								<img src="imgs/image-10.png" alt="Unity-import" width="1200">
 								If prompted to cleanup:<ol>
 								<li>Select show assets</li>
@@ -131,7 +135,7 @@
 								<li>Press “fix all” </li>
 								<img src="imgs/image-18.png" alt="Alt text" width="1200">
 								<li>Press fix all again.</li>
-								<li>Press apply all for recommended actions</li> 
+								<li>Press apply all for recommended actions ... wait a bit ...</li> 
 								<img src="imgs/image-17.png" alt="Oculus fixes again" width="1200">
 								<li>The red/orange dot should disappear from the symbol bottom right</li>
 								</ol>
@@ -139,13 +143,12 @@
 								<li>Drag OVRPlayerController.prefab into the scene</li>
 								<img src="imgs/image-19.png" alt="Unity prefab" width="1200">
 								<li>Connect your Oculus to the PC (confirm usb dialog in the headset) </li>
-								<img src="imgs/image-20.png" alt="Unity build" width="1200">
-								<li>Set up build options<ol>
-								<li>Go to file -&gt; build settings and switch to Android</li>
-								<li>Switch platform
-								This takes a while …</li>
-								<li>Press on the red dot again and Fix all /apply all again
-								Wait a while ….</li>
+								<li>Press on the red dot again if it appears and Fix all /apply all again.</li>
+								<li>Open build settings -> file-> build settings</li>
+								<img src="imgs/image-20.png" alt="Unity build" width="1200">						
+
+
+								
 								<li>Select Run Device -&gt; Oculus quest 2. If the Oculus doesn’t show up under Run Device, make sure sure you have confirmed USB debugging in the headset when connecting the USB cable. If USB debug prompt does not show up try:<ol>
 								<li>Disable developer mode from phone</li>
 								<li>Restart Oculus</li>
@@ -158,10 +161,10 @@
 								</li>
 								</ol>
 								</li>
-								<li><p>Press build and run (save apk file)</p>
-								<p>You might get some build errors :</p>
+								<li><p>Press build and run (save apk file) ... wait a bit ...</p>
+								<p>You might get some build errors or the Oculus just shows three dots... :</p>
 								<ul>
-								<li><p>Check the oculus symbol in the bottom right and press fix until it diapers if errors consist:</p>
+								<li><p>Check the oculus symbol in the bottom right and press fix until it disapiers. If errors consist:</p>
 								</li>
 								<li><p>If the error is related to the JDK, Android SDK &amp; NDK (Unity installs some but for some Unity distros (like 18) it’s not working and has to be adjusted), we need to install the right version of these. You can set the JDK, SDK, NDK under “edit -&gt; preferences -&gt; External tools.</p>
 								<img src="imgs/image-21.png" alt="Unity-preferences" width="1200">
@@ -262,8 +265,14 @@
 										<pre><code>cd ~/my_ws/src</code>
 									<code>git clone https://github.com/Unity-Technologies/ROS-TCP-Endpoint.git
 									</code></pre>
-									<li><p>Clone the quest2_ros_msg package from TODO into your src. For now all files are here: <a href="https://drive.google.com/drive/folders/1VWmBWDII7Pwz979tciZBF-KVvHwq8s5v?usp=sharing">https://drive.google.com/drive/folders/1VWmBWDII7Pwz979tciZBF-KVvHwq8s5v?usp=sharing</a></p>
-									</li>
+									<li><p>Clone the <a  href="https://github.com/vision-tactile-manip/quest2_ros_msg" target="_blank" > quest2_ros_msg</a> package  </p>into your src.</li>
+										<pre>
+											<code>git clone https://github.com/vision-tactile-manip/quest2_ros_msg.git
+									</code>
+										</pre>
+
+									 <!-- For now all files are here: <a href="https://drive.google.com/drive/folders/1VWmBWDII7Pwz979tciZBF-KVvHwq8s5v?usp=sharing">https://drive.google.com/drive/folders/1VWmBWDII7Pwz979tciZBF-KVvHwq8s5v?usp=sharing</a></p> -->
+									
 									<li><p>Build with catkin build</p>
 									<pre><code>cd ~<span class="hljs-regexp">/my_ws/</span></code>
 									<code>catkin build
@@ -305,6 +314,7 @@
 									<li>Name the cube in the scene “test_box”:</li>
 									<img src="imgs/image-33.png" alt="unity-box" width="700">
 									<li>Add ridgitbody to test_box (“Add component” -&gt; “Rigidbody”) and disable gravity</li>
+									<img src="imgs/image-33-2.png" alt="unity-box" width="700">
 									</ol>
 									</li>
 									<li><p>Configuring communication between ROS and headset:</p>
@@ -324,6 +334,7 @@
 									</li>
 									<li>Build and run the app. You can see if the connection is successful in the ros tcp terminal: </li>
 									<img src="imgs/image-35.png" alt="ROS Unity connection" width="700">
+									<li> Make python scrips executable i.e <code>chmod +x filename </code></li>
 									<li>Now in a new terminal set make the same ros_master and ros_IP settings and then run:<pre><code><span class="hljs-selector-tag">rosrun</span> <span class="hljs-selector-tag">quest2_ros_msg</span> <span class="hljs-selector-tag">cube_move_ros</span><span class="hljs-selector-class">.py</span>
 									</code></pre>The cube should move when pressing "A" and moving the right controller or pressing "X" and moving the left controller.</li>
 									</ol>
@@ -343,7 +354,7 @@
 								<h2 id="haptic-feedback">Haptic Feedback via Tactile sensors</h2>
 
 								<ol>
-									<li>Get the  <a href="./files/haptic_feedback.cs" download="haptic_feedback.cs">haptic feedback</a>   unity scripts. </li>
+									<li>Get the  <a href="./files/habtic_feedback.cs" download="habtic_feedback.cs">haptic feedback</a>   unity scripts. </li>
 									<li>Copy it into the assets folder 
 									or, Make a new c# script in unity -&gt; right click in assets create-&gt;c# script</li>
 									<li>Draw the haptic feedcack script onto the plane </li>
@@ -358,8 +369,8 @@
 									<li> Lunch digit_cams.launch (you might need to adjust the "video_device" parameter)</li>
 									<pre><code>roslaunch quest2_ros_msg digit_cams.launch </code> </pre>
 
-									<li> start the haptic_feedback_via_tactile script in the ROS terminal (make sure the ROS_IP and ROS_MASTER_URI are correctly set + the ros tcp endpoint is running) </li>
-									<pre><code>rosrun quest2_ros_msg haptic_feedback_via_tactile </code> </pre>
+									<li> start the haptic_feedback_via_tactile script in the ROS terminal (make sure the ROS_IP and ROS_MASTER_URI are correctly set + the ros tcp endpoint is running)  and it's executable.</li>
+									<pre><code>rosrun quest2_ros_msg haptic_feedback_via_tactile.py </code> </pre>
 
 									<li> Pressing the "B" button should start the reference frames collection (default 100 frames)</li>
 

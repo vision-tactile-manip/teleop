@@ -115,11 +115,9 @@ public class teleop : MonoBehaviour
     {
 
         var rh_vel = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.RTouch);
-        //Debug.Log("velocity: " + rh_vel);
         rh_vel = baseTransform.TransformDirection(rh_vel);
         var rh_vel_ang = OVRInput.GetLocalControllerAngularVelocity(OVRInput.Controller.RTouch);
         rh_vel_ang = baseTransform.TransformDirection(rh_vel_ang);
-        Debug.Log("velocity: " + rh_vel);
         OVRHandPosRotVelMsg right_hand_vel = new OVRHandPosRotVelMsg(
                  rh_vel[0],
                 rh_vel[1],
@@ -137,11 +135,9 @@ public class teleop : MonoBehaviour
     {
 
         var lh_vel = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.LTouch);
-        //Debug.Log("velocity: " + rh_vel);
         lh_vel = baseTransform.TransformDirection(lh_vel);
         var lh_vel_ang = OVRInput.GetLocalControllerAngularVelocity(OVRInput.Controller.LTouch);
         lh_vel_ang = baseTransform.TransformDirection(lh_vel_ang);
-        Debug.Log("velocity: " + lh_vel);
         OVRHandPosRotVelMsg left_hand_vel = new OVRHandPosRotVelMsg(
                  lh_vel[0],
                 lh_vel[1],
